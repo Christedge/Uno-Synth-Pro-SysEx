@@ -157,17 +157,13 @@ F0 00 21 1A 02 03 11 01 0A F7
 
 # Using Python
 
-The editor communicates with the synth via traditional [MIDI Sytem exclusive messages](https://en.wikipedia.org/wiki/MIDI#SysEx) which can be used for backup and restore over USB or MIDI cables. Python can be used to issue the required SysEx requests via some script.
-
-## Mido and RtMidi
-
-mido and python-[rtmidi](https://github.com/thestk/rtmidi?tab=readme-ov-file) need to be installed:
+The editor communicates with the synth via traditional [MIDI Sytem exclusive messages](https://en.wikipedia.org/wiki/MIDI#SysEx) which can be used for backup and restore over USB or MIDI cables. To issue the SysEx requests required for backups via the request script in this repository, Mido and [RtMidi](https://github.com/thestk/rtmidi?tab=readme-ov-file) are required:
 
 ```
 pip install mido python-rtmidi
 ```
 
-
+The script can request one preset at a time, so you have to pass the preset number (1-256) to the script. The synth will answer by dumping the preset. Record this dump using the SysEx recording tool of your choice.
 
 # Remarks
 
