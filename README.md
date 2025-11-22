@@ -163,7 +163,17 @@ The editor communicates with the synth via traditional [MIDI Sytem exclusive mes
 pip install mido python-rtmidi
 ```
 
-The script can request one preset at a time, so you have to pass the preset number (1-256) to the script. The synth will answer by dumping the preset. Record this dump using the SysEx recording tool of your choice.
+## Requesting presets
+
+The script can request one preset at a time, so you have to pass the desired preset number (1-256). The synth will answer by dumping the preset. Record this dump using the SysEx recording tool of your choice.
+
+## Convertign presets
+
+The script unoConvertPreset.py converts the requested file and converts it, so it can be sent back to the synth.
+
+WARNING 1: This is absolutely untested code, capable of creating output that may brick your synth. Use at your own risk.
+
+WARNING 2: The script only converts the preset's name and ptach data. It drops and other data (like sequencer data).
 
 # Remarks
 
