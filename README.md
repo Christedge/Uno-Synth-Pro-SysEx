@@ -167,7 +167,7 @@ pip install mido python-rtmidi
 
 The script can request one preset at a time, so you have to pass the desired preset number (1-256). The synth will answer by dumping the preset. Record this dump using the SysEx recording tool of your choice.
 
-## Convertign presets
+## Converting presets
 
 The script unoConvertPreset.py converts the requested file and converts it, so it can be sent back to the synth.
 
