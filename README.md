@@ -153,7 +153,7 @@ After the above modifications, a preset can be sent back to the synth. However, 
 
 ```
 F0 00 21 1A 02 03 11 01 0A F7
-``
+```
 
 # Using Python
 
