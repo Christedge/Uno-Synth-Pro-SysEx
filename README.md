@@ -49,7 +49,7 @@ A preset as returned by the synth consists of 6 SysEx messages:
 
 * One message of 43 bytes, mainly containing the preset's name (14 bytes, all  characters uppercase).
 
-* One message of 305 bytes, probably the sound engine's data.
+* One message of 305 bytes. This message contains the sound engine's data, including the modulation matrix and the effects engine parameters.
 
 * Four (and in rare cases, less) messages of variable length, about 204 bytes long. Maybe the sequence data.
 
@@ -137,7 +137,7 @@ F0 00 21 1A 02 03 00 29 01 79 03 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F
 F0 00 21 1A 02 03    28 01 79 03 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 4F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7C 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 67 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 3F 7E 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 73 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 1F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 4F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7C 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 67 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 3F 7E 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 73 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 1F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 0F 00 00 00 00 00 00 00 00 00 F7
 ```
 
-In the last message, additionally to the above modification, byte 10 (value 04) is replaced by value 44:
+In the last message, additionally to the above modification, byte 10 (value 04) is replaced by value 44, but sometimes also 43:
 
 ```
 F0 00 21 1A 02 03 00 29 01 79 04 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 4F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7C 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 67 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 3F 7E 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 73 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 1F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 4F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7C 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 67 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 3F 7E 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 73 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 1F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 79 7F 7F 7F 7F 7F 7F 7F 7F 7F 7F 0F 00 00 00 00 00 00 00 00 00 F7
